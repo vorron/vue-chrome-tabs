@@ -38,14 +38,14 @@ const speed = '150ms'
         <img class="img" :src="tab.favicon" alt="" />
         <div class="label">{{ tab.label }}</div>
         <div class="close" @click.stop="onClose(tab.key)">
-          <svg class="tabs-close-icon" width="16" height="16" stroke="#595959">
+          <svg class="close-icon" width="16" height="16" stroke="#595959">
             <path d="M 4 4 L 12 12 M 12 4 L 4 12"></path>
           </svg>
         </div>
-        <svg class="tabs-background-before" width="7" height="7">
+        <svg class="bottom-radius-before" width="7" height="7">
           <path d="M 0 7 A 7 7 0 0 0 7 0 L 7 7 Z"></path>
         </svg>
-        <svg class="tabs-background-after" width="7" height="7">
+        <svg class="bottom-radius-after" width="7" height="7">
           <path d="M 0 0 A 7 7 0 0 0 7 7 L 0 7 Z"></path>
         </svg>
       </div>
@@ -104,11 +104,11 @@ const speed = '150ms'
     &::after {
       display: none;
     }
-    & .tabs-background-before {
+    & .bottom-radius-before {
       fill: #f2f3f5;
       z-index: 3;
     }
-    & .tabs-background-after {
+    & .bottom-radius-after {
       fill: #f2f3f5;
       z-index: 3;
     }
@@ -128,11 +128,11 @@ const speed = '150ms'
     &::after {
       display: none;
     }
-    & .tabs-background-before {
+    & .bottom-radius-before {
       fill: #fff;
       z-index: 5;
     }
-    & .tabs-background-after {
+    & .bottom-radius-after {
       fill: #fff;
       z-index: 5;
     }
@@ -166,7 +166,7 @@ const speed = '150ms'
   margin-right: 5px;
 }
 
-.tabs-close-icon {
+.close-icon {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -177,28 +177,19 @@ const speed = '150ms'
   }
 }
 
-.tabs-background-before,
-.tabs-background-after {
+.bottom-radius-before,
+.bottom-radius-after {
   bottom: -0px;
   position: absolute;
   fill: transparent;
   transition: v-bind(speed);
 }
 
-.tabs-background-before {
+.bottom-radius-before {
   left: -7px;
 }
 
-.tabs-background-after {
+.bottom-radius-after {
   right: -7px;
-}
-
-@keyframes tab-show {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
 }
 </style>
